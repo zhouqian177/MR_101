@@ -123,13 +123,21 @@ MR 分析
 ├── 中介 MR ── 扩展3：12_mediation_mr.R（两步法）
 ├── 多效性稳健 ── 扩展4/5：13_radial_mr.R + 14_mrmix.R
 ├── 共定位 ── 扩展6：15_coloc.R（PP.H4）
+├── 非线性 MR ── 进阶1：30_nonlinear_mr.R（分位数分层）
+├── 药物靶点 MR ── 进阶2：31_drug_target_mr.R（cis-MR, PCSK9）
+├── 贝叶斯 MR ── 进阶3：32_bayesian_mr.R（cML 约束最大似然）
+├── 多变量中介 ── 进阶4：33_mvmr_mediation.R（MVMR 校正中介）
+├── OpenGWAS ── 20~24（本地/在线/Python 客户端/PheWAS）
 └── 报告规范 ── 本文档 STROBE-MR 清单
 ```
 
-## 7. 进阶方向（未在仓库实现的留白）
+## 7. 进阶方向状态
 
-- 非线性 MR（分位数/分段）
-- 药物靶点 MR（cis-MR）与 pQTL 分析
-- 贝叶斯 MR（coloc-susie 已含，另有 MRBEE/cML）
-- 多暴露 MVMR + 中介的组合（多变量中介）
-- MR 结果的可视化报告（forest/heatmap 批量）
+| 进阶方向 | 状态 | 模块 |
+|---|---|---|
+| 非线性 MR（分位数/分段） | ✅ 已实现 | scripts/30 + docs/15 |
+| 药物靶点 MR（cis-MR/pQTL） | ✅ 已实现 | scripts/31 + docs/16（PCSK9→LDL-C） |
+| 贝叶斯 MR（cML） | ✅ 已实现 | scripts/32 + docs/17（MendelianRandomization 内置） |
+| 多变量中介（MVMR+中介） | ✅ 已实现 | scripts/33 + docs/18 |
+| MR 结果可视化报告（森林/热图批量） | 留白 | 可基于 ggplot2 扩展 |
+| 全基因组 MR 扫描（PheWAS-MR 批量） | 留白 | 可基于 22_opengwas_api.py phewas 扩展 |

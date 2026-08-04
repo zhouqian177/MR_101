@@ -32,7 +32,11 @@ MR_101/
 │   ├── 11_coloc.md            # 扩展6: 共定位分析报告
 │   ├── 12_opengwas.md         # 深化: OpenGWAS 真实数据 LDL-C→CHD 报告
 │   ├── 13_opengwas_guide.md   # OpenGWAS 数据库使用说明（数据内容/API/工具）
-│   └── 14_opengwas_online.md  # OpenGWAS 在线分析报告（LDL-C→CHD + 多暴露对比）
+│   ├── 14_opengwas_online.md  # OpenGWAS 在线分析报告（LDL-C→CHD + 多暴露对比）
+│   ├── 15_nonlinear_mr.md     # 进阶1: 非线性 MR 报告
+│   ├── 16_drug_target_mr.md   # 进阶2: 药物靶点 MR（cis-MR）报告
+│   ├── 17_bayesian_mr.md      # 进阶3: 贝叶斯 MR（cML）报告
+│   └── 18_mvmr_mediation.md   # 进阶4: 多变量中介 MR 报告
 ├── 00.data/             # 暴露/结局 GWAS 汇总数据（不入库）
 ├── 01.tools/            # 工具依赖与版本说明
 ├── 02.analysis/         # 分析中间产物与结果（CSV/绘图数据）
@@ -48,7 +52,11 @@ MR_101/
     ├── 12_mediation_mr.R    # 扩展3: 两步中介 MR
     ├── 13_radial_mr.R       # 扩展4: 径向 MR 离群检验
     ├── 14_mrmix.R           # 扩展5: MRMix 稳健混合模型
-    └── 15_coloc.R           # 扩展6: 共定位分析 coloc.abf
+    ├── 15_coloc.R           # 扩展6: 共定位分析 coloc.abf
+    ├── 30_nonlinear_mr.R    # 进阶1: 非线性 MR（分位数分层）
+    ├── 31_drug_target_mr.R  # 进阶2: 药物靶点 MR（cis-MR, PCSK9）
+    ├── 32_bayesian_mr.R     # 进阶3: 贝叶斯 MR（cML 约束最大似然）
+    └── 33_mvmr_mediation.R  # 进阶4: 多变量中介 MR（MVMR 校正中介）
 ```
 
 ## 快速开始
@@ -83,6 +91,12 @@ python3 scripts/22_opengwas_api.py associations --id ieu-a-7 --snps ... # 结局
 python3 scripts/22_opengwas_api.py phewas --snps rs11591147            # PheWAS 扫描
 Rscript scripts/23_opengwas_online.R   # 在线版 LDL-C -> CHD 全面分析
 Rscript scripts/24_opengwas_multi.R    # 在线版 LDL/HDL/TG -> CHD 多暴露对比
+
+# 7. 进阶分析（知识库进阶方向）
+Rscript scripts/30_nonlinear_mr.R      # 非线性 MR（分位数分层）
+Rscript scripts/31_drug_target_mr.R    # 药物靶点 MR（cis-MR, PCSK9）
+Rscript scripts/32_bayesian_mr.R       # 贝叶斯 MR（cML）
+Rscript scripts/33_mvmr_mediation.R    # 多变量中介 MR
 ```
 
 ## 结果速览
@@ -99,6 +113,10 @@ Rscript scripts/24_opengwas_multi.R    # 在线版 LDL/HDL/TG -> CHD 多暴露�
   IVW OR=1.57 (P=6.6e-20)，五方法全显著、Egger 截距 P=0.39 无多效性（`docs/12`）
 - **OpenGWAS 在线**：API 在线版 LDL-C→CHD（加权中位数 OR=1.77, P=1.4e-06）；
   多暴露对比 LDL OR=1.77 / HDL OR=0.66（保护）/ TG OR=1.21（`02.analysis/opengwas/online*`）
+- **进阶1 非线性 MR**：分位数分层揭示层间效应差异（`docs/15`）
+- **进阶2 药物靶点 MR**：PCSK9→LDL-C P=8e-20（cis-MR, `docs/16`）
+- **进阶3 贝叶斯 MR**：cML beta=0.47, P=0.0017 比 IVW 更稳健（`docs/17`）
+- **进阶4 多变量中介 MR**：中介比例 53.6%（真实 50%, `docs/18`）
 - 说明：OpenGWAS API 需 JWT token（见 docs/13_opengwas_guide.md），本仓库
   Python 客户端（22_opengwas_api.py）负责数据获取、R 脚本（23/24）负责分析
 
