@@ -23,3 +23,7 @@
 # 系统
 .DS_Store
 nohup.out
+
+# OpenGWAS JWT token（含密钥，绝不可提交）
+.env
+.env.*
