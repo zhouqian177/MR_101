@@ -44,7 +44,10 @@ MR_101/
 │   ├── 23_drug_repurposing.md # 新模块3: 药物重定位扫描报告
 │   ├── 24_bidirectional_mr.md # 补充1: 双向 MR 报告
 │   ├── 25_mr_power.md         # 补充2: MR 功效计算报告
-│   └── 26_pathway_mr.md       # 补充3: 通路 MR（顺序中介）报告
+│   ├── 26_pathway_mr.md       # 补充3: 通路 MR（顺序中介）报告
+│   ├── 27_mr_simulation.md    # 拓展1: MR 模拟研究报告
+│   ├── 28_conmix_mr.md        # 拓展2: ConMix MR 报告
+│   └── 29_mvmr_methods.md     # 拓展3: MVMR 方法补充报告
 ├── 00.data/             # 暴露/结局 GWAS 汇总数据（不入库）
 ├── 01.tools/            # 工具依赖与版本说明
 ├── 02.analysis/         # 分析中间产物与结果（CSV/绘图数据）
@@ -72,7 +75,10 @@ MR_101/
     ├── 38_drug_repurposing.R # 新模块3: 药物重定位扫描（PCSK9/HMGCR/CETP/NPC1L1→CHD）
     ├── 39_bidirectional_mr.R # 补充1: 双向 MR（LDL-C↔CHD 反向因果）
     ├── 40_mr_power.R         # 补充2: MR 功效计算（功率曲线与样本量）
-    └── 41_pathway_mr.R       # 补充3: 通路 MR（X→M1→M2→Y 顺序中介）
+    ├── 41_pathway_mr.R       # 补充3: 通路 MR（X→M1→M2→Y 顺序中介）
+    ├── 42_mr_simulation.R    # 拓展1: MR 模拟研究（多场景×方法性能对比）
+    ├── 43_conmix_mr.R        # 拓展2: ConMix MR（Contamination mixture）
+    └── 44_mvmr_methods.R     # 拓展3: MVMR 方法补充（MVMedian/MaxLik）
 ```
 
 ## 快速开始
@@ -125,6 +131,11 @@ Rscript scripts/38_drug_repurposing.R  # 药物重定位扫描（4 靶点→CHD�
 Rscript scripts/39_bidirectional_mr.R  # 双向 MR（LDL-C↔CHD 反向因果）
 Rscript scripts/40_mr_power.R          # MR 功效计算（功率曲线与样本量）
 Rscript scripts/41_pathway_mr.R        # 通路 MR（X→M1→M2→Y 顺序中介）
+
+# 10. 拓展分析（模拟研究/ConMix/MVMR 方法补充）
+Rscript scripts/42_mr_simulation.R     # MR 模拟研究（多场景×方法性能对比）
+Rscript scripts/43_conmix_mr.R         # ConMix MR（Contamination mixture）
+Rscript scripts/44_mvmr_methods.R      # MVMR 方法补充（MVMedian/MaxLik）
 ```
 
 ## 结果速览
