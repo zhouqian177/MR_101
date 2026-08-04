@@ -1,0 +1,25 @@
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+.Renviron
+
+# 数据与中间结果（体积大 / 可再生，不入库）
+00.data/*
+!00.data/README.md
+02.analysis/cache/
+*.log
+*.hh
+*.raw
+*.txt.gz
+*.tsv.gz
+
+# 报告产物
+03.reports/*.html
+03.reports/cache/
+04.figures/*.png
+
+# 系统
+.DS_Store
+nohup.out
