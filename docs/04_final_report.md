@@ -64,6 +64,7 @@
 | 扩展4 径向 MR | scripts/13_radial_mr.R | docs/08_radial_mr.md |
 | 扩展5 MRMix | scripts/14_mrmix.R | docs/09_mrmix.md |
 | 扩展6 共定位 | scripts/15_coloc.R | docs/11_coloc.md |
+| 深化 OpenGWAS | scripts/20/21_opengwas_*.R | docs/12_opengwas.md（真实 LDL-C→CHD） |
 | 知识库 | docs/10_knowledge_base.md | MR 全图谱 + STROBE-MR 清单 |
 
 ## 5. 局限性与改进方向

@@ -29,7 +29,8 @@ MR_101/
 │   ├── 08_radial_mr.md        # 扩展4: 径向 MR 报告
 │   ├── 09_mrmix.md            # 扩展5: MRMix 报告
 │   ├── 10_knowledge_base.md   # MR 知识库（全图谱 + STROBE-MR）
-│   └── 11_coloc.md            # 扩展6: 共定位分析报告
+│   ├── 11_coloc.md            # 扩展6: 共定位分析报告
+│   └── 12_opengwas.md         # 深化: OpenGWAS 真实数据 LDL-C→CHD 报告
 ├── 00.data/             # 暴露/结局 GWAS 汇总数据（不入库）
 ├── 01.tools/            # 工具依赖与版本说明
 ├── 02.analysis/         # 分析中间产物与结果（CSV/绘图数据）
@@ -68,6 +69,10 @@ Rscript scripts/12_mediation_mr.R    # 两步中介 MR
 Rscript scripts/13_radial_mr.R       # 径向 MR
 Rscript scripts/14_mrmix.R           # MRMix
 Rscript scripts/15_coloc.R           # 共定位
+
+# 5. OpenGWAS 真实数据深化（LDL-C -> CHD）
+Rscript scripts/20_opengwas_harmonise.R   # 工具变量提取 + harmonise
+Rscript scripts/21_opengwas_analysis.R    # 五方法 + 敏感性分析
 ```
 
 ## 结果速览
@@ -80,8 +85,10 @@ Rscript scripts/15_coloc.R           # 共定位
 - **扩展 4 径向 MR**：检出离群 rs2736428，剔除后 P=6e-05（`docs/08`）
 - **扩展 5 MRMix**：θ=0.14 (P=1e-17)，π0=0.46（`docs/09`）
 - **扩展 6 共定位**：三区域 PP.H4>0.99（`docs/11`）
-- 说明：LDL-C → CHD 实例因 OpenGWAS API 在本环境被代理阻断，
-  改用 TwoSampleMR 官方内置的真实 GWAS 示例数据（端粒长度 → CHD），流程完全通用
+- **OpenGWAS 深化**：真实数据 LDL-C → CHD，64 个工具变量，
+  IVW OR=1.57 (P=6.6e-20)，五方法全显著、Egger 截距 P=0.39 无多效性（`docs/12`）
+- 说明：OpenGWAS API 需 JWT token（本环境未配置），改用与其同源的公开下载数据
+  （GLGC 2013 LDL = ieu-b-110、CARDIoGRAMplusC4D 2015 = ieu-a-7），数据完全一致
 
 ## Git 开发规范
 

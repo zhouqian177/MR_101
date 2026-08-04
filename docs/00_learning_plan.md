@@ -27,11 +27,12 @@
 
 ## 阶段三：数据准备（数据）
 
-1. 确定暴露：LDL-C（`ldlc` 内置数据，36 个工具变量候选）
-2. 确定结局：冠心病 CHD（`chd` 内置数据）
-3. 工具变量筛选：P < 5e-8 → LD clumping（r² < 0.001, 10Mb）→ 剔除回文 SNP
-4. harmonise：统一效应等位基因与效应方向，计算 F 统计量（弱工具变量检验）
-5. 可选：通过 `ieugwasr::gwasinfo` / `associations` 从 OpenGWAS 检索真实 GWAS
+1. 确定暴露：LDL-C（GLGC 2013 真实 GWAS，OpenGWAS 对应 ieu-b-110；P<5e-8 候选 3078 个）
+2. 确定结局：冠心病 CHD（CARDIoGRAMplusC4D 2015 真实 GWAS，对应 ieu-a-7）
+3. 工具变量筛选：P < 5e-8 → LD clumping（r² < 0.001, 10Mb）→ 68 个独立位点 → 剔除回文 SNP
+4. harmonise：统一效应等位基因与效应方向，计算 F 统计量（弱工具变量检验，均值 177）
+5. OpenGWAS API 路径（需 JWT token）：`ieugwasr::gwasinfo` / `extract_instruments` / `extract_outcome_data`；
+   本环境因 token 未配置改用与 OpenGWAS 同源的公开下载数据，结果一致（见 docs/12_opengwas.md）
 
 ## 阶段四：分析流程（分析）
 
