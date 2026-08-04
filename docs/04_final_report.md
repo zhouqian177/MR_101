@@ -1,17 +1,18 @@
 # MR 最终学习报告（04_final_report）
 
-> 项目：MR_101 —— 孟德尔随机化学习仓库（Two-sample MR）
-> 完成时间：2026-08-04
+> 项目：MR_101 —— 孟德尔随机化学习仓库（Two-sample MR + 六类扩展分析）
+> 完成时间：2026-08-04（首版）、2026-08-04（扩展版）
 
 ## 1. 项目目标达成情况
 
 | 学习计划阶段 | 目标 | 达成 |
 |---|---|---|
-| 阶段一：原理 | 三大假设、五方法、检验体系 | ✔ 见 §2、docs/03_analysis.md |
+| 阶段一：原理 | 三大假设、五方法、检验体系 | ✔ 见 §2、docs/03_analysis.md、docs/10_knowledge_base.md |
 | 阶段二：工具 | TwoSampleMR 等工具链 | ✔ 见 docs/01_tool_test.md |
 | 阶段三：数据 | 工具变量提取、clumping、harmonise、F 检验 | ✔ 见 docs/02_data_prep.md |
-| 阶段四：流程 | 端到端分析 | ✔ 见 docs/03_analysis.md |
-| 阶段五：报告 | 各模块报告齐全 | ✔ 本报告 + 各模块报告 |
+| 阶段四：流程 | 端到端两样本分析 | ✔ 见 docs/03_analysis.md |
+| 阶段五：报告 | 各模块报告齐全 | ✔ 各模块报告 + 本报告 |
+| 阶段六：扩展 | 六类进阶 MR 分析 | ✔ 见 §3.2 |
 
 ## 2. 理论学习要点
 
@@ -52,29 +53,41 @@
 
 | 模块 | 产物 | 报告 |
 |---|---|---|
-| 学习计划 | docs/00_learning_plan.md | 五阶段计划与验收标准 |
+| 学习计划 | docs/00_learning_plan.md | 六阶段计划与验收标准 |
 | 工具安装与测试 | scripts/00_env.R、00_smoke_test.R | docs/01_tool_test.md（含踩坑记录） |
 | 数据准备 | scripts/01_data_prep.R、02.analysis/ | docs/02_data_prep.md |
-| 分析流程 | scripts/02_mr_analysis.R、03_sensitivity.R | docs/03_analysis.md |
-| 图表 | 04.figures/*.png（7 张） | 散点/森林/漏斗/leave-oneout |
+| 两样本分析流程 | scripts/02_mr_analysis.R、03_sensitivity.R | docs/03_analysis.md |
+| 图表 | 04.figures/*.png | 散点/森林/漏斗/leave-oneout |
+| 扩展1 单样本 MR | scripts/10_one_sample_mr.R | docs/05_one_sample_mr.md |
+| 扩展2 多变量 MR | scripts/11_mvmr.R | docs/06_mvmr.md |
+| 扩展3 两步中介 MR | scripts/12_mediation_mr.R | docs/07_mediation_mr.md |
+| 扩展4 径向 MR | scripts/13_radial_mr.R | docs/08_radial_mr.md |
+| 扩展5 MRMix | scripts/14_mrmix.R | docs/09_mrmix.md |
+| 扩展6 共定位 | scripts/15_coloc.R | docs/11_coloc.md |
+| 知识库 | docs/10_knowledge_base.md | MR 全图谱 + STROBE-MR 清单 |
 
 ## 5. 局限性与改进方向
 
-1. **弱工具变量**：示例数据样本量小（~2 万），平均 F=8.6 < 10，IVW 可能被低估；
+1. **弱工具变量**：两样本示例数据样本量小（~2 万），平均 F=8.6 < 10，IVW 可能被低估；
    实际研究应过滤 F>10 或使用更强 GWAS
 2. **数据源受限**：OpenGWAS API 不可用，未能演示在线数据提取与 LD 参考面板下载；
    网络恢复后应补充 `extract_instruments` + `clump_data` 在线流程
 3. **人群一致性**：两样本 MR 要求暴露/结局人群尽量同源（本示例均为欧洲人群，OK）
-4. **可扩展**：可加入多变量 MR（MVMR）、中介分析、共定位（coloc）等进阶内容
+4. **扩展模块数据**：MVMR/中介/共定位等扩展以模拟数据演示方法学（共定位用 coloc 官方
+   模拟区域），真实 GWAS 数据应用流程已就绪，待网络恢复后可替换
+5. **可再扩展**：非线性 MR、药物靶点 MR（cis-MR/pQTL）、贝叶斯 MR（MRBEE/cML）、
+   多变量中介等进阶内容（见 docs/10_knowledge_base.md §7）
 
 ## 6. Git 开发规范执行情况
 
 - 分支：main 主干 + Conventional Commits（docs:/test:/feat: 前缀）
-- 提交粒度：按模块划分（骨架→工具→数据→脚本→流程→报告）
-- 每次提交均通过验证后再提交（冒烟测试、端到端重跑）
+- 提交粒度：按模块划分（骨架→工具→数据→脚本→流程→报告→扩展）
+- 每次提交均通过验证后再提交（冒烟测试、端到端重跑、各扩展脚本单独验证）
 
 ## 7. 结论
 
 本项目以 Git 规范完成了一个完整的孟德尔随机化学习闭环：原理 → 工具 → 数据 →
-流程 → 报告，每个模块均有可复现脚本与对应报告。核心能力已就绪：
-**拿到任意暴露/结局 GWAS 汇总数据，即可按 scripts/ 流程完成标准两样本 MR 分析。**
+流程 → 报告，并额外覆盖六类进阶分析（单样本 MR、MVMR、中介 MR、径向 MR、
+MRMix、共定位），每个模块均有可复现脚本与对应报告。核心能力已就绪：
+**拿到任意暴露/结局 GWAS 汇总数据，即可按 scripts/ 流程完成标准两样本 MR 分析；
+进阶问题（多暴露、中介机制、多效性稳健、LD 假关联排除）均有对应扩展工具。**
