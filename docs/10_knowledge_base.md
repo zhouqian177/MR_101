@@ -138,6 +138,9 @@ MR 分析
 ├── 模拟研究 ── 拓展1：42_mr_simulation.R（多效性场景×方法性能对比）
 ├── ConMix MR ── 拓展2：43_conmix_mr.R（Contamination mixture 多效性方法）
 ├── MVMR 方法补充 ── 拓展3：44_mvmr_methods.R（MVMedian/MaxLik）
+├── 方法全景对比 ── 深化1：45_methods_panorama.R（9 种方法同数据对比）
+├── LD 矩阵校正 ── 深化2：46_ld_correction.R（工具变量间 LD 校正方法）
+├── 自动报告 ── 深化3：47_auto_report.R（论文格式汇总表 + 全景图）
 ├── OpenGWAS ── 20~24（本地/在线/Python 客户端/PheWAS）
 └── 报告规范 ── 本文档 STROBE-MR 清单
 ```

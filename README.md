@@ -47,7 +47,10 @@ MR_101/
 │   ├── 26_pathway_mr.md       # 补充3: 通路 MR（顺序中介）报告
 │   ├── 27_mr_simulation.md    # 拓展1: MR 模拟研究报告
 │   ├── 28_conmix_mr.md        # 拓展2: ConMix MR 报告
-│   └── 29_mvmr_methods.md     # 拓展3: MVMR 方法补充报告
+│   ├── 29_mvmr_methods.md     # 拓展3: MVMR 方法补充报告
+│   ├── 30_methods_panorama.md # 深化1: MR 方法全景对比报告
+│   ├── 31_ld_correction.md    # 深化2: MR 的 LD 矩阵校正报告
+│   └── 32_auto_report.md      # 深化3: MR 结果自动报告报告
 ├── 00.data/             # 暴露/结局 GWAS 汇总数据（不入库）
 ├── 01.tools/            # 工具依赖与版本说明
 ├── 02.analysis/         # 分析中间产物与结果（CSV/绘图数据）
@@ -78,7 +81,10 @@ MR_101/
     ├── 41_pathway_mr.R       # 补充3: 通路 MR（X→M1→M2→Y 顺序中介）
     ├── 42_mr_simulation.R    # 拓展1: MR 模拟研究（多场景×方法性能对比）
     ├── 43_conmix_mr.R        # 拓展2: ConMix MR（Contamination mixture）
-    └── 44_mvmr_methods.R     # 拓展3: MVMR 方法补充（MVMedian/MaxLik）
+    ├── 44_mvmr_methods.R     # 拓展3: MVMR 方法补充（MVMedian/MaxLik）
+    ├── 45_methods_panorama.R # 深化1: MR 方法全景对比（9 种方法同数据）
+    ├── 46_ld_correction.R    # 深化2: MR 的 LD 矩阵校正
+    └── 47_auto_report.R      # 深化3: MR 结果自动报告（论文格式表格）
 ```
 
 ## 快速开始
