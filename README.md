@@ -30,7 +30,8 @@ MR_101/
 │   ├── 09_mrmix.md            # 扩展5: MRMix 报告
 │   ├── 10_knowledge_base.md   # MR 知识库（全图谱 + STROBE-MR）
 │   ├── 11_coloc.md            # 扩展6: 共定位分析报告
-│   └── 12_opengwas.md         # 深化: OpenGWAS 真实数据 LDL-C→CHD 报告
+│   ├── 12_opengwas.md         # 深化: OpenGWAS 真实数据 LDL-C→CHD 报告
+│   └── 13_opengwas_guide.md   # OpenGWAS 数据库使用说明（数据内容/API/工具）
 ├── 00.data/             # 暴露/结局 GWAS 汇总数据（不入库）
 ├── 01.tools/            # 工具依赖与版本说明
 ├── 02.analysis/         # 分析中间产物与结果（CSV/绘图数据）
@@ -71,8 +72,16 @@ Rscript scripts/14_mrmix.R           # MRMix
 Rscript scripts/15_coloc.R           # 共定位
 
 # 5. OpenGWAS 真实数据深化（LDL-C -> CHD）
-Rscript scripts/20_opengwas_harmonise.R   # 工具变量提取 + harmonise
-Rscript scripts/21_opengwas_analysis.R    # 五方法 + 敏感性分析
+Rscript scripts/20_opengwas_harmonise.R   # 本地下载版: 工具变量提取 + harmonise
+Rscript scripts/21_opengwas_analysis.R    # 本地下载版: 五方法 + 敏感性分析
+
+# 6. OpenGWAS 在线 API 分析（需 token, 见 docs/13_opengwas_guide.md）
+python3 scripts/22_opengwas_api.py gwasinfo --ids ieu-b-110,ieu-a-7   # 元数据
+python3 scripts/22_opengwas_api.py tophits --id ieu-b-110 --p1 5e-8    # 工具变量
+python3 scripts/22_opengwas_api.py associations --id ieu-a-7 --snps ... # 结局关联
+python3 scripts/22_opengwas_api.py phewas --snps rs11591147            # PheWAS 扫描
+Rscript scripts/23_opengwas_online.R   # 在线版 LDL-C -> CHD 全面分析
+Rscript scripts/24_opengwas_multi.R    # 在线版 LDL/HDL/TG -> CHD 多暴露对比
 ```
 
 ## 结果速览
@@ -87,8 +96,10 @@ Rscript scripts/21_opengwas_analysis.R    # 五方法 + 敏感性分析
 - **扩展 6 共定位**：三区域 PP.H4>0.99（`docs/11`）
 - **OpenGWAS 深化**：真实数据 LDL-C → CHD，64 个工具变量，
   IVW OR=1.57 (P=6.6e-20)，五方法全显著、Egger 截距 P=0.39 无多效性（`docs/12`）
-- 说明：OpenGWAS API 需 JWT token（本环境未配置），改用与其同源的公开下载数据
-  （GLGC 2013 LDL = ieu-b-110、CARDIoGRAMplusC4D 2015 = ieu-a-7），数据完全一致
+- **OpenGWAS 在线**：API 在线版 LDL-C→CHD（加权中位数 OR=1.77, P=1.4e-06）；
+  多暴露对比 LDL OR=1.77 / HDL OR=0.66（保护）/ TG OR=1.21（`02.analysis/opengwas/online*`）
+- 说明：OpenGWAS API 需 JWT token（见 docs/13_opengwas_guide.md），本仓库
+  Python 客户端（22_opengwas_api.py）负责数据获取、R 脚本（23/24）负责分析
 
 ## Git 开发规范
 
