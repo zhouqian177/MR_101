@@ -1,0 +1,6 @@
+"id.exposure","id.outcome","outcome","exposure","method","nsnp","b","se","pval"
+"w45DOv","eNzXX8","outcome","Telomere_length","Inverse variance weighted",31,-0.400010140093627,0.0884028759752089,6.04371058125241e-06
+"w45DOv","eNzXX8","outcome","Telomere_length","MR Egger",31,-0.517591055395342,0.173231538862715,0.00566823494718456
+"w45DOv","eNzXX8","outcome","Telomere_length","Weighted median",31,-0.372670999621878,0.117042323445876,0.00145219680930338
+"w45DOv","eNzXX8","outcome","Telomere_length","Weighted mode",31,-0.381524963494186,0.399432740902243,0.347127204003655
+"w45DOv","eNzXX8","outcome","Telomere_length","Simple mode",31,-0.381524963494186,0.399994984465594,0.34779537012121

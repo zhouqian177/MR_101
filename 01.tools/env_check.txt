@@ -1,0 +1,37 @@
+========================================
+MR_101 环境检查报告
+检查时间: 2026-08-04 14:06:14 
+========================================
+
+[1] R 版本
+     R version 4.5.0 (2025-04-11) 
+    平台: x86_64-redhat-linux-gnu 
+
+[2] 关键 R 包
+    TwoSampleMR            OK     v0.7.9
+    MendelianRandomization OK     v0.10.0
+    ieugwasr               OK     v1.1.0
+    MRInstruments          OK     v0.3.2
+    MRPRESSO               OK     v1.0
+    data.table             OK     v1.14.10
+    ggplot2                OK     v3.4.4
+    dplyr                  OK     v1.1.4
+    knitr                  OK     v1.45
+    rmarkdown              OK     v2.25
+
+[3] 系统工具
+    Rscript    /usr/bin/Rscript
+    python3    /data10/zhouqian/software/miniconda3/bin/python3
+    plink      (未找到，非必需)
+    plink2     (未找到，非必需)
+    gcta       (未找到，非必需)
+    bcftools   /data10/zhouqian/software/miniconda3/bin/bcftools
+    samtools   /data10/zhouqian/software/miniconda3/bin/samtools
+
+[4] OpenGWAS API 连通性
+    连接失败: The following error was encountered in trying to query the OpenGWAS server:
+Error in curl::curl_fetch_memory(url, handle = handle): OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to api.opengwas.io:443 
+
+ 
+========================================
+环境检查完成

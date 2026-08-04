@@ -1,0 +1,31 @@
+========================================
+TwoSampleMR 工具链冒烟测试
+时间: 2026-08-04 14:13:30 
+TwoSampleMR 版本: 0.7.9 
+========================================
+
+[1] 读取内置真实数据
+    暴露(telomere_length.txt) SNP 数: 31 | 结局(cardiogram.txt) SNP 数: 31 
+    格式化后: 暴露工具变量 31 个, 结局匹配 SNP 31 个
+
+[2] harmonise（统一效应等位基因/方向）
+    harmonise 后 SNP 数: 31 
+    mr_keep=TRUE 的 SNP 数: 31 
+
+[3] 五种 MR 方法
+                    method nsnp          b         se         pval
+ Inverse variance weighted   31 -0.4000101 0.08840288 6.043711e-06
+                  MR Egger   31 -0.5175911 0.17323154 5.668235e-03
+           Weighted median   31 -0.3726710 0.11704232 1.452197e-03
+             Weighted mode   31 -0.3815250 0.39943274 3.471272e-01
+               Simple mode   31 -0.3815250 0.39999498 3.477954e-01
+
+[4] 敏感性分析
+    异质性 Cochran Q: Q = 47.31 , P = 0.01733 
+    Egger 截距 = 0.00637 , P = 0.4354 (P<0.05 提示水平多效性)
+    单 SNP 分析: 33 条; leave-one-out: 32 条
+[5] 绘图（散点/森林/漏斗）
+    已保存 04.figures/smoke_{scatter,forest,funnel}.png
+
+========================================
+冒烟测试完成：工具链可用 ✔
