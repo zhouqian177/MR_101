@@ -38,7 +38,10 @@ MR_101/
 │   ├── 17_bayesian_mr.md      # 进阶3: 贝叶斯 MR（cML）报告
 │   ├── 18_mvmr_mediation.md   # 进阶4: 多变量中介 MR 报告
 │   ├── 19_mr_scan.md          # 进阶5: MR 扫描（多结局批量）报告
-│   └── 20_visual_report.md    # 进阶6: MR 可视化报告（森林图/热图）
+│   ├── 20_visual_report.md    # 进阶6: MR 可视化报告（森林图/热图）
+│   ├── 21_eqtl_mapping.md     # 新模块1: eQTL 定位（转录组 MR + coloc）
+│   ├── 22_multiomics_mr.md    # 新模块2: 多组学 MR（eQTL/pQTL/代谢组）
+│   └── 23_drug_repurposing.md # 新模块3: 药物重定位扫描报告
 ├── 00.data/             # 暴露/结局 GWAS 汇总数据（不入库）
 ├── 01.tools/            # 工具依赖与版本说明
 ├── 02.analysis/         # 分析中间产物与结果（CSV/绘图数据）
@@ -60,7 +63,10 @@ MR_101/
     ├── 32_bayesian_mr.R     # 进阶3: 贝叶斯 MR（cML 约束最大似然）
     ├── 33_mvmr_mediation.R  # 进阶4: 多变量中介 MR（MVMR 校正中介）
     ├── 34_mr_scan.R         # 进阶5: MR 扫描（LDL-C × 6 结局批量）
-    └── 35_visual_report.R   # 进阶6: MR 可视化报告（森林图/热图）
+    ├── 35_visual_report.R   # 进阶6: MR 可视化报告（森林图/热图）
+    ├── 36_eqtl_mapping.R    # 新模块1: eQTL 定位（HMGCR 表达→CHD + coloc）
+    ├── 37_multiomics_mr.R   # 新模块2: 多组学 MR（eQTL/pQTL/代谢组→CHD）
+    └── 38_drug_repurposing.R # 新模块3: 药物重定位扫描（PCSK9/HMGCR/CETP/NPC1L1→CHD）
 ```
 
 ## 快速开始
@@ -103,6 +109,11 @@ Rscript scripts/32_bayesian_mr.R       # 贝叶斯 MR（cML）
 Rscript scripts/33_mvmr_mediation.R    # 多变量中介 MR
 Rscript scripts/34_mr_scan.R           # MR 扫描（LDL-C × 6 结局批量）
 Rscript scripts/35_visual_report.R     # MR 可视化报告（森林图/热图）
+
+# 8. 新模块（多组学与药物研发）
+Rscript scripts/36_eqtl_mapping.R      # eQTL 定位（HMGCR 表达→CHD + coloc）
+Rscript scripts/37_multiomics_mr.R     # 多组学 MR（eQTL/pQTL/代谢组→CHD）
+Rscript scripts/38_drug_repurposing.R  # 药物重定位扫描（4 靶点→CHD）
 ```
 
 ## 结果速览
@@ -125,6 +136,9 @@ Rscript scripts/35_visual_report.R     # MR 可视化报告（森林图/热图�
 - **进阶4 多变量中介 MR**：中介比例 53.6%（真实 50%, `docs/18`）
 - **进阶5 MR 扫描**：LDL-C × 6 结局，CAD 加权中位数 OR=1.53 (P=3.4e-09)（`docs/19`）
 - **进阶6 可视化报告**：森林图 + 多暴露/多结局热图（`docs/20`）
+- **新模块1 eQTL 定位**：HMGCR 表达→CHD 转录组 MR + coloc（`docs/21`）
+- **新模块2 多组学 MR**：代谢组 LDL-C OR=1.74 (P=3e-56) 显著（`docs/22`）
+- **新模块3 药物重定位**：PCSK9/HMGCR/CETP/NPC1L1 四靶点→CHD 扫描（`docs/23`）
 - 说明：OpenGWAS API 需 JWT token（见 docs/13_opengwas_guide.md），本仓库
   Python 客户端（22_opengwas_api.py）负责数据获取、R 脚本（23/24）负责分析
 

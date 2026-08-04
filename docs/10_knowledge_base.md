@@ -127,6 +127,11 @@ MR 分析
 ├── 药物靶点 MR ── 进阶2：31_drug_target_mr.R（cis-MR, PCSK9）
 ├── 贝叶斯 MR ── 进阶3：32_bayesian_mr.R（cML 约束最大似然）
 ├── 多变量中介 ── 进阶4：33_mvmr_mediation.R（MVMR 校正中介）
+├── MR 扫描 ── 进阶5：34_mr_scan.R（多结局批量）
+├── 可视化报告 ── 进阶6：35_visual_report.R（森林图/热图）
+├── eQTL 定位 ── 新模块1：36_eqtl_mapping.R（转录组 MR + coloc）
+├── 多组学 MR ── 新模块2：37_multiomics_mr.R（eQTL/pQTL/代谢组）
+├── 药物重定位 ── 新模块3：38_drug_repurposing.R（多靶点→CHD 扫描）
 ├── OpenGWAS ── 20~24（本地/在线/Python 客户端/PheWAS）
 └── 报告规范 ── 本文档 STROBE-MR 清单
 ```
@@ -141,5 +146,8 @@ MR 分析
 | 多变量中介（MVMR+中介） | ✅ 已实现 | scripts/33 + docs/18 |
 | 全基因组 MR 扫描（PheWAS-MR 批量） | ✅ 已实现 | scripts/34 + docs/19（LDL-C × 6 结局） |
 | MR 结果可视化报告（森林/热图批量） | ✅ 已实现 | scripts/35 + docs/20 |
+| eQTL 定位（转录组 MR + 共定位） | ✅ 已实现 | scripts/36 + docs/21（HMGCR→CHD） |
+| 多组学 MR（eQTL/pQTL/代谢组） | ✅ 已实现 | scripts/37 + docs/22（LDL-C OR=1.74 显著） |
+| 药物重定位扫描（多靶点→疾病） | ✅ 已实现 | scripts/38 + docs/23（4 靶点→CHD） |
 
 全部进阶方向已实现 ✔
