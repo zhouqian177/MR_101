@@ -39,7 +39,7 @@ MR_101/
 # 1. 环境检查
 Rscript scripts/00_env.R
 
-# 2. 数据准备（TwoSampleMR 内置示例数据 ldlc -> chd）
+# 2. 数据准备（内置真实示例数据 telomere_length -> chd）
 Rscript scripts/01_data_prep.R
 
 # 3. 主分析 + 敏感性分析
@@ -49,11 +49,13 @@ Rscript scripts/03_sensitivity.R
 
 ## 结果速览
 
-- 暴露：LDL 胆固醇 (LDL-C)，工具变量数见 `02.analysis/instruments.txt`
+- 暴露：端粒长度（Telomere_length），LD clumping 后 17 个工具变量
 - 结局：冠心病 (CHD)
-- 主要方法结果：`02.analysis/mr_results.csv`
+- 主要方法结果：`02.analysis/mr_results.csv`（加权中位数 OR=0.70, P=0.023）
 - 敏感性分析：`02.analysis/sensitivity/`
 - 图形：`04.figures/`
+- 说明：学习计划中的 LDL-C → CHD 实例因 OpenGWAS API 在本环境被代理阻断，
+  改用 TwoSampleMR 官方内置的真实 GWAS 示例数据（端粒长度 → CHD），流程完全通用
 
 ## Git 开发规范
 

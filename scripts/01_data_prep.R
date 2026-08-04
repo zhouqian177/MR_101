@@ -100,7 +100,8 @@ cat("harmonise 后 SNP:", nrow(instr), "\n")
 cat("F 统计量: min =", round(min(dat$F_stat), 1),
     ", mean =", round(mean(dat$F_stat), 1),
     ", max =", round(max(dat$F_stat), 1), "\n")
-cat("结论: F>10 无弱工具变量；工具变量数量 >= 3 可进行 MR 分析\n")
+cat("注: 示例数据样本量小(~2万), 平均 F=8.6 偏弱; 实际研究建议 F>10 过滤\n")
+cat("结论: 工具变量数量 >= 3 可进行 MR 分析; 弱工具变量问题需在报告中讨论\n")
 sink()
 cat("    02.analysis/instruments.txt、harmonised.csv、data_prep_summary.txt 已生成\n")
 cat("\n数据准备完成 ✔\n")
