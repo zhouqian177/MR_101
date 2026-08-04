@@ -132,6 +132,9 @@ MR 分析
 ├── eQTL 定位 ── 新模块1：36_eqtl_mapping.R（转录组 MR + coloc）
 ├── 多组学 MR ── 新模块2：37_multiomics_mr.R（eQTL/pQTL/代谢组）
 ├── 药物重定位 ── 新模块3：38_drug_repurposing.R（多靶点→CHD 扫描）
+├── 双向 MR ── 补充1：39_bidirectional_mr.R（LDL-C↔CHD 反向因果）
+├── 功效计算 ── 补充2：40_mr_power.R（MR 统计功效与曲线）
+├── 通路 MR ── 补充3：41_pathway_mr.R（X→M1→M2→Y 顺序中介）
 ├── OpenGWAS ── 20~24（本地/在线/Python 客户端/PheWAS）
 └── 报告规范 ── 本文档 STROBE-MR 清单
 ```
