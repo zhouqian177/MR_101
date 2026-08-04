@@ -31,7 +31,8 @@ MR_101/
 │   ├── 10_knowledge_base.md   # MR 知识库（全图谱 + STROBE-MR）
 │   ├── 11_coloc.md            # 扩展6: 共定位分析报告
 │   ├── 12_opengwas.md         # 深化: OpenGWAS 真实数据 LDL-C→CHD 报告
-│   └── 13_opengwas_guide.md   # OpenGWAS 数据库使用说明（数据内容/API/工具）
+│   ├── 13_opengwas_guide.md   # OpenGWAS 数据库使用说明（数据内容/API/工具）
+│   └── 14_opengwas_online.md  # OpenGWAS 在线分析报告（LDL-C→CHD + 多暴露对比）
 ├── 00.data/             # 暴露/结局 GWAS 汇总数据（不入库）
 ├── 01.tools/            # 工具依赖与版本说明
 ├── 02.analysis/         # 分析中间产物与结果（CSV/绘图数据）

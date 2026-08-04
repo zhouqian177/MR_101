@@ -9,11 +9,11 @@
 options(width = 150)
 dir.create("02.analysis", showWarnings = FALSE)
 
-# ---------- 配置 ----------
+# ---------- 配置（可用环境变量覆盖，默认兼容本机路径） ----------
 EXPOSURE_FILE <- "00.data/telomere_length.txt"
 OUTCOME_FILE  <- "00.data/cardiogram.txt"
-PLINK         <- "/y/u/zhouqian/00.AI_learning/01.GWAS/software/bin/plink"
-LD_REF_PREFIX <- "/y/u/zhouqian/00.AI_learning/01.GWAS/01.qc/ceu_raw"  # CEU HapMap3
+PLINK         <- Sys.getenv("MR_PLINK", "/y/u/zhouqian/00.AI_learning/01.GWAS/software/bin/plink")
+LD_REF_PREFIX <- Sys.getenv("MR_LD_REF", "/y/u/zhouqian/00.AI_learning/01.GWAS/01.qc/ceu_raw")  # CEU HapMap3
 
 cat("========================================\n")
 cat("MR 数据准备报告\n")

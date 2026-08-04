@@ -25,7 +25,9 @@ cat("========================================\n\n")
 
 # ---------- 1. 读取真实基因型 ----------
 cat("[1] 读取 mouse_hs1940 基因型（01.GWAS 项目）\n")
-geno_raw <- fread("zcat /y/u/zhouqian/00.AI_learning/01.GWAS/00.data/mouse_hs1940.geno.txt.gz",
+GENO_FILE <- Sys.getenv("MR_MOUSE_GENO",
+                        "/y/u/zhouqian/00.AI_learning/01.GWAS/00.data/mouse_hs1940.geno.txt.gz")
+geno_raw <- fread(cmd = paste("zcat", GENO_FILE),
                   header = FALSE, sep = ",")
 snp_ids <- geno_raw[[1]]; a1 <- geno_raw[[2]]; a2 <- geno_raw[[3]]
 G <- as.matrix(geno_raw[, 4:ncol(geno_raw)])   # 12226 SNP × 1940 个体, 剂量 0/1/2
