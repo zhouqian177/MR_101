@@ -139,5 +139,7 @@ MR 分析
 | 药物靶点 MR（cis-MR/pQTL） | ✅ 已实现 | scripts/31 + docs/16（PCSK9→LDL-C） |
 | 贝叶斯 MR（cML） | ✅ 已实现 | scripts/32 + docs/17（MendelianRandomization 内置） |
 | 多变量中介（MVMR+中介） | ✅ 已实现 | scripts/33 + docs/18 |
-| MR 结果可视化报告（森林/热图批量） | 留白 | 可基于 ggplot2 扩展 |
-| 全基因组 MR 扫描（PheWAS-MR 批量） | 留白 | 可基于 22_opengwas_api.py phewas 扩展 |
+| 全基因组 MR 扫描（PheWAS-MR 批量） | ✅ 已实现 | scripts/34 + docs/19（LDL-C × 6 结局） |
+| MR 结果可视化报告（森林/热图批量） | ✅ 已实现 | scripts/35 + docs/20 |
+
+全部进阶方向已实现 ✔

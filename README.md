@@ -36,7 +36,9 @@ MR_101/
 │   ├── 15_nonlinear_mr.md     # 进阶1: 非线性 MR 报告
 │   ├── 16_drug_target_mr.md   # 进阶2: 药物靶点 MR（cis-MR）报告
 │   ├── 17_bayesian_mr.md      # 进阶3: 贝叶斯 MR（cML）报告
-│   └── 18_mvmr_mediation.md   # 进阶4: 多变量中介 MR 报告
+│   ├── 18_mvmr_mediation.md   # 进阶4: 多变量中介 MR 报告
+│   ├── 19_mr_scan.md          # 进阶5: MR 扫描（多结局批量）报告
+│   └── 20_visual_report.md    # 进阶6: MR 可视化报告（森林图/热图）
 ├── 00.data/             # 暴露/结局 GWAS 汇总数据（不入库）
 ├── 01.tools/            # 工具依赖与版本说明
 ├── 02.analysis/         # 分析中间产物与结果（CSV/绘图数据）
@@ -56,7 +58,9 @@ MR_101/
     ├── 30_nonlinear_mr.R    # 进阶1: 非线性 MR（分位数分层）
     ├── 31_drug_target_mr.R  # 进阶2: 药物靶点 MR（cis-MR, PCSK9）
     ├── 32_bayesian_mr.R     # 进阶3: 贝叶斯 MR（cML 约束最大似然）
-    └── 33_mvmr_mediation.R  # 进阶4: 多变量中介 MR（MVMR 校正中介）
+    ├── 33_mvmr_mediation.R  # 进阶4: 多变量中介 MR（MVMR 校正中介）
+    ├── 34_mr_scan.R         # 进阶5: MR 扫描（LDL-C × 6 结局批量）
+    └── 35_visual_report.R   # 进阶6: MR 可视化报告（森林图/热图）
 ```
 
 ## 快速开始
@@ -97,6 +101,8 @@ Rscript scripts/30_nonlinear_mr.R      # 非线性 MR（分位数分层）
 Rscript scripts/31_drug_target_mr.R    # 药物靶点 MR（cis-MR, PCSK9）
 Rscript scripts/32_bayesian_mr.R       # 贝叶斯 MR（cML）
 Rscript scripts/33_mvmr_mediation.R    # 多变量中介 MR
+Rscript scripts/34_mr_scan.R           # MR 扫描（LDL-C × 6 结局批量）
+Rscript scripts/35_visual_report.R     # MR 可视化报告（森林图/热图）
 ```
 
 ## 结果速览
@@ -117,6 +123,8 @@ Rscript scripts/33_mvmr_mediation.R    # 多变量中介 MR
 - **进阶2 药物靶点 MR**：PCSK9→LDL-C P=8e-20（cis-MR, `docs/16`）
 - **进阶3 贝叶斯 MR**：cML beta=0.47, P=0.0017 比 IVW 更稳健（`docs/17`）
 - **进阶4 多变量中介 MR**：中介比例 53.6%（真实 50%, `docs/18`）
+- **进阶5 MR 扫描**：LDL-C × 6 结局，CAD 加权中位数 OR=1.53 (P=3.4e-09)（`docs/19`）
+- **进阶6 可视化报告**：森林图 + 多暴露/多结局热图（`docs/20`）
 - 说明：OpenGWAS API 需 JWT token（见 docs/13_opengwas_guide.md），本仓库
   Python 客户端（22_opengwas_api.py）负责数据获取、R 脚本（23/24）负责分析
 

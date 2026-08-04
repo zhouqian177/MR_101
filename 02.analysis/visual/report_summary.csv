@@ -1,0 +1,4 @@
+"图","内容"
+"visual_forest_all.png","各模块 MR 结果森林图（IVW/加权中位数/Egger）"
+"visual_heatmap_multi.png","LDL/HDL/TG -> CHD 热图"
+"visual_heatmap_scan.png","LDL-C -> 6 结局扫描热图"
