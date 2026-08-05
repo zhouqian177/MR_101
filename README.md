@@ -50,7 +50,10 @@ MR_101/
 │   ├── 29_mvmr_methods.md     # 拓展3: MVMR 方法补充报告
 │   ├── 30_methods_panorama.md # 深化1: MR 方法全景对比报告
 │   ├── 31_ld_correction.md    # 深化2: MR 的 LD 矩阵校正报告
-│   └── 32_auto_report.md      # 深化3: MR 结果自动报告报告
+│   ├── 32_auto_report.md      # 深化3: MR 结果自动报告报告
+│   ├── 33_drug_target_network.md # 深化A: 药物-靶点网络分析报告
+│   ├── 34_gwas_mr_scan.md     # 深化B: 全基因组 MR 批量扫描报告
+│   └── 35_bayesian_mr.md      # 深化C: 贝叶斯模型平均 MR 报告
 ├── 00.data/             # 暴露/结局 GWAS 汇总数据（不入库）
 ├── 01.tools/            # 工具依赖与版本说明
 ├── 02.analysis/         # 分析中间产物与结果（CSV/绘图数据）
@@ -84,7 +87,10 @@ MR_101/
     ├── 44_mvmr_methods.R     # 拓展3: MVMR 方法补充（MVMedian/MaxLik）
     ├── 45_methods_panorama.R # 深化1: MR 方法全景对比（9 种方法同数据）
     ├── 46_ld_correction.R    # 深化2: MR 的 LD 矩阵校正
-    └── 47_auto_report.R      # 深化3: MR 结果自动报告（论文格式表格）
+    ├── 47_auto_report.R      # 深化3: MR 结果自动报告（论文格式表格）
+    ├── 48_drug_target_network.R # 深化A: 药物-靶点网络分析（4 靶点×多结局）
+    ├── 49_gwas_mr_scan.R     # 深化B: 全基因组 MR 批量扫描（多暴露×多结局）
+    └── 50_bayesian_mr.R      # 深化C: 贝叶斯模型平均 MR（后验分布）
 ```
 
 ## 快速开始

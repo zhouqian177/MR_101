@@ -141,6 +141,9 @@ MR 分析
 ├── 方法全景对比 ── 深化1：45_methods_panorama.R（9 种方法同数据对比）
 ├── LD 矩阵校正 ── 深化2：46_ld_correction.R（工具变量间 LD 校正方法）
 ├── 自动报告 ── 深化3：47_auto_report.R（论文格式汇总表 + 全景图）
+├── 药物-靶点网络 ── 深化A：48_drug_target_network.R（4 靶点×多结局网络）
+├── 全基因组扫描 ── 深化B：49_gwas_mr_scan.R（多暴露×多结局批量矩阵）
+└── 贝叶斯模型平均 ── 深化C：50_bayesian_mr.R（贝叶斯元分析 + 后验分布）
 ├── OpenGWAS ── 20~24（本地/在线/Python 客户端/PheWAS）
 └── 报告规范 ── 本文档 STROBE-MR 清单
 ```
